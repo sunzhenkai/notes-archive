@@ -144,6 +144,9 @@ $ mysql -u root -p
 # 重置root密码
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '{password}'; 
 
+# 更新密码
+mysql > UPDATE mysql.user SET Password=PASSWORD('root') WHERE User='root' AND Host='%';
+
 # 新建远程登录用户
 mysql> CREATE USER 'root'@'%' IDENTIFIED BY '{password}';
 

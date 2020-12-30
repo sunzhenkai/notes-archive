@@ -64,7 +64,7 @@
 [`Analyzer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Analyzer.html)、 [`CharFilter`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/CharFilter.html)、 [`Tokenizer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Tokenizer.html)、 [`TokenFilter`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/TokenFilter.html)的关系很容易迷惑。
 
 - [`Analyzer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Analyzer.html) 是分析链的工厂，`Analyzer`不处理文本，它构造用于处理文本的`CharFilter`、`Tokenizer`或者`TokenFilter`。Analyzer有两个任务：创建[`TokenStream`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/TokenStream.html)，用于接受reader、产生tokens、包装或者预处理Reader对象。
-- CharFilter是Reader的子类，它支持偏移量跟踪。
+- `CharFilter`是Reader的子类，它支持偏移量跟踪。
 - [`Tokenizer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Tokenizer.html)仅负责将输入文本分解为tokens。
 - [`TokenFilter `](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/TokenFilter.html)修改令牌流(stream of tokens)及其内容。
 - [`Tokenizer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Tokenizer.html)是 [`TokenStream`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/TokenStream.html)，但[`Analyzer`](https://lucene.apache.org/core/8_5_2/core/org/apache/lucene/analysis/Analyzer.html) 不是。
